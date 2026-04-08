@@ -4,8 +4,8 @@ Project Title:
 Neighborhood Maintenance and Complaint Tracker
 
 Team Members:
-Navyata Venkatesh PES2UG23CS375 navyata.venkat15@gmai
-l.com
+Mekala Babu Abhinav PES2UG23CS338 abhinav.m1907@gmail.com
+Navyata Venkatesh PES2UG23CS375 navyata.venkat15@gmail.com
 
 Project Description:
 The Neighbourhood Maintenance and Complaint Tracker is a
