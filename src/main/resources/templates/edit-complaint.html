@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Complaint</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745; /* admin green */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1e7e34;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #555;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-container">
+    <h2>Edit Complaint</h2>
+
+    <form action="/admin/edit" method="post">
+
+        <input type="hidden" name="complaintId" th:value="${complaint.complaintId}">
+
+        <label>Description</label>
+        <input type="text" name="description" th:value="${complaint.description}" required>
+
+        <label>Status</label>
+        <input type="text" name="status" th:value="${complaint.status}" required>
+
+        <button type="submit">Update</button>
+    </form>
+
+    <a href="/admin-dashboard" class="back-btn">← Back</a>
+</div>
+
+</body>
+</html>

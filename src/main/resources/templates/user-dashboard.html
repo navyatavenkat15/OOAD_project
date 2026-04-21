@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .dashboard-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .btn {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .logout {
+            background-color: #dc3545;
+        }
+
+        .logout:hover {
+            background-color: #a71d2a;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="dashboard-container">
+    <h2>Welcome User</h2>
+    <p>Manage your complaints easily</p>
+
+    <a href="/user/add-complaint" class="btn">Add Complaint</a>
+    <a href="/user/view-complaints" class="btn">View My Complaints</a>
+    <a href="/logout" class="btn logout">Logout</a>
+</div>
+
+</body>
+</html>

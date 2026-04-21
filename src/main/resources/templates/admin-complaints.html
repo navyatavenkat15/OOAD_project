@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Complaints</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .table-container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 600px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #28a745; /* admin green */
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .action-btn {
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            color: white;
+            margin: 2px;
+        }
+
+        .edit-btn {
+            background-color: #007bff;
+        }
+
+        .edit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+        }
+
+        .delete-btn:hover {
+            background-color: #a71d2a;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #555;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="table-container">
+    <h2>All Complaints</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+
+        <tr th:each="c : ${complaints}">
+            <td th:text="${c.complaintId}"></td>
+            <td th:text="${c.description}"></td>
+            <td th:text="${c.status}"></td>
+
+            <td>
+                <a th:href="@{'/admin/edit/' + ${c.complaintId}}" class="action-btn edit-btn">Edit</a>
+                <a th:href="@{'/admin/delete/' + ${c.complaintId}}" class="action-btn delete-btn">Delete</a>
+            </td>
+        </tr>
+    </table>
+
+    <a href="/admin-dashboard" class="back-btn">← Back</a>
+</div>
+
+</body>
+</html>

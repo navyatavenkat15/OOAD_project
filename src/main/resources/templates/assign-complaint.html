@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assign Complaint</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1e7e34;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #555;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-container">
+    <h2>Assign Complaint</h2>
+
+    <form action="/admin/assign" method="post">
+
+        <label>Complaint</label>
+        <select name="complaintId">
+            <option th:each="c : ${complaints}" 
+                    th:value="${c.complaintId}" 
+                    th:text="${c.description}">
+            </option>
+        </select>
+
+        <label>Staff</label>
+        <select name="staffId">
+            <option th:each="s : ${staffList}" 
+                    th:value="${s.userId}" 
+                    th:text="${s.name}">
+            </option>
+        </select>
+
+        <button type="submit">Assign</button>
+    </form>
+
+    <a href="/admin-dashboard" class="back-btn">← Back</a>
+</div>
+
+</body>
+</html>

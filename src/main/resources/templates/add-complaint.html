@@ -1,0 +1,81 @@
+<!-- Behavioral Pattern: Iterator Pattern
+     Used to iterate over collections using th:each -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Complaint</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #555;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-container">
+    <h2>Add Complaint</h2>
+
+    <form action="/user/add-complaint" method="post">
+        <input type="text" name="description" placeholder="Enter complaint" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <a href="/user-dashboard" class="back-btn">← Back</a>
+</div>
+
+</body>
+</html>
